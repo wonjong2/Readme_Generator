@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/wonjong2/Readme_Generator/issues"
   },
-  "homepage": "https://github.com/wonjong2/Readme_Generator#readme"
+  "homepage": "https://github.com/wonjong2/Readme_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
 }
