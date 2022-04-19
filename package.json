@@ -1,0 +1,22 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "Generate the README.md file automatically after getting inputs from a user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonjong2/Readme_Generator.git"
+  },
+  "keywords": [
+    "README.md"
+  ],
+  "author": "Wonjong2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonjong2/Readme_Generator/issues"
+  },
+  "homepage": "https://github.com/wonjong2/Readme_Generator#readme"
+}
