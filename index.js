@@ -10,7 +10,18 @@ const licenseBadges = {
     'Apache License 2.0' : '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 
     'MIT License' : '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', 
     'Boost Software License 1.0' : '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
-    'The Unlicense' : '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/),'
+    'The Unlicense' : '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
+};
+
+const licenseNotices = {
+    'GNU AGPLv3': 'https://choosealicense.com/licenses/agpl-3.0/',
+    'GNU GPLv3' : 'https://choosealicense.com/licenses/gpl-3.0/' ,
+    'GNU LGPLv3' : 'https://choosealicense.com/licenses/lgpl-3.0/', 
+    'Mozilla Public License 2.0' : 'https://choosealicense.com/licenses/mpl-2.0/', 
+    'Apache License 2.0' : 'https://choosealicense.com/licenses/apache-2.0/', 
+    'MIT License' : 'https://choosealicense.com/licenses/mit/', 
+    'Boost Software License 1.0' : 'https://choosealicense.com/licenses/bsl-1.0/',
+    'The Unlicense' : 'https://choosealicense.com/licenses/unlicense/',
 };
 
 inquirer
@@ -91,7 +102,12 @@ inquirer
 
 
 function generateContents({title, description, install, usage, contributing, tests, license, github, email}) {
+    // Get the URL for license badge icon
     const licenseBadge = licenseBadges[license];
+    // Get the URL for license notice
+    const licenseNotice = licenseNotices[license];
+    // Get Year info.
+    const year = new Date().getFullYear();
 
     return `# ${title}
 ${licenseBadge}
@@ -118,7 +134,7 @@ ${usage}
 
 ## License
 
-${license}
+Copyright (c) ${year} \`${github}\` (GitHub Username) Licensed under [the ${license}](${licenseNotice}).
 
 ## Contributing
 
