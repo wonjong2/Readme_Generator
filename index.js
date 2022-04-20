@@ -1,6 +1,18 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// Object for License Bagdes
+const licenseBadges = {
+    'GNU AGPLv3': '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)',
+    'GNU GPLv3' : '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)' ,
+    'GNU LGPLv3' : '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)', 
+    'Mozilla Public License 2.0' : '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)', 
+    'Apache License 2.0' : '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 
+    'MIT License' : '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', 
+    'Boost Software License 1.0' : '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
+    'The Unlicense' : '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/),'
+};
+
 inquirer
     .prompt([
         {
@@ -79,14 +91,22 @@ inquirer
 
 
 function generateContents({title, description, install, usage, contributing, tests, license, github, email}) {
+    const licenseBadge = licenseBadges[license];
+
     return `# ${title}
+${licenseBadge}
 
 ## Description
 
 ${description}
 
 ## Table of Contents
-
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Test](#test)
+6. [Questions](#questions)
 
 ## Installation
 
