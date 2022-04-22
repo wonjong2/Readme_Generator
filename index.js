@@ -100,7 +100,6 @@ inquirer
         },
     ])
     .then(response => {
-        console.log(response);
         // Create README.md file with contents
         fs.writeFile('README.md', generateContents(response), (error) => error? console.error(err):console.log("Succeess"));
     })
