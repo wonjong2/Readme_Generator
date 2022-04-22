@@ -55,6 +55,11 @@ inquirer
             type: 'input',
             message: 'Enter a contribution guideline: ',
             name: 'contributing',
+            default: `All your inputs are valuable and I love them.
+
+- Reporting a bug
+- Submiiting a fix
+- Proposing new features`,
         },
         {
             // Test Instruction
@@ -69,18 +74,21 @@ inquirer
             choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
             name: 'license',
             pageSize: 8,
+            default: 'MIT License',
         },
         {
             // GitHub Username
             type: 'input',
             message: 'Enter your GitHub username: ',
             name: 'github',
+            default: 'wonjong2',
         },
         {
             // Email address
             type: 'input',
             message: 'Enter your email address: ',
             name: 'email',
+            default: 'wonjong2@gmail.com',
             // Validation the format of email address
             validate(value) {
                 const pass = value.match(/\S+@\S+\.\S+/);
